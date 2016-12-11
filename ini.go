@@ -178,6 +178,12 @@ func LoadSources(opts LoadOptions, source interface{}, others ...interface{}) (_
 			return nil, err
 		}
 	}
+
+	fmt.Println("LoadSources called - printing sources.")
+	for _, s := range sources {
+		fmt.Println(s)
+	}
+
 	f := newFile(sources, opts)
 	if err = f.Reload(); err != nil {
 		return nil, err
